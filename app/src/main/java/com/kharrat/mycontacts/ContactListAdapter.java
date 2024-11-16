@@ -54,7 +54,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         char currentContactAlphabet = name.toUpperCase().charAt(0);
         String photoUri = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.PHOTO_URI));
         Integer newAlphaPosition = alphabetPositionMap.get(currentContactAlphabet);
-
+        position = cursor.getInt(cursor.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
         if(newAlphaPosition==null){
             alphabetPositionMap.put(currentContactAlphabet, position);
             holder.contactAlpha.setText(currentContactAlphabet+"");
@@ -123,7 +123,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
                     inputStream.close();
                 }
             } catch (Exception e) {
-                //Log.d(CONTACT_LIST_ADAPTER, "Couldn't load photo to bitmap: ",e);
+                Log.d(CONTACT_LIST_ADAPTER, "Couldn't load photo to bitmap: ",e);
 
             }
         }

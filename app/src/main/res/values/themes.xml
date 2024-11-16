@@ -7,5 +7,6 @@
 
     <style name="Theme.MyContacts" parent="Base.Theme.MyContacts" >
         <item name="android:windowBackground">@color/bg_color</item>
+        <item name="android:colorAccent">@color/bright_purple</item>
     </style>
 </resources>
